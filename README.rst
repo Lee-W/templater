@@ -35,14 +35,14 @@ with the `Examples`_.
 Installation
 ------------
 
-`templater is available at PyPI <http://pypi.python.org/pypi/templater>`_, so
+`templater is available at PyPI <http://pypi.python.org/pypi/templater3>`_, so
 installing it is as simple as executing::
 
-    pip install templater
+    pip install templater3
 
 Or you can download the latest version and install it using ``setup.py``::
 
-    git clone https://turicas@github.com/turicas/templater.git
+    git clone https://github.com/Lee-W/templater
     cd templater
     python setup.py build install
 
@@ -87,28 +87,28 @@ All you need to know is below (and in the ``examples`` directory)::
     ...    template.learn(document)
     ...
 
-    >>> print 'Template created:', template._template # template definition
+    >>> print('Template created:', template._template # template definition)
     Template created: [None, '<b> ', None, ' and ', None, ' </b>', None]
 
     >>> document_to_parse = '<b> yellow and blue </b>'
-    >>> print 'Parsing other document:', template.parse(document_to_parse)
+    >>> print('Parsing other document:', template.parse(document_to_parse))
     Parsing other document: ['', 'yellow', 'blue', '']
 
-    >>> print 'Filling the blanks:', template.join(['', 'red', 'orange', ''])
+    >>> print('Filling the blanks:', template.join(['', 'red', 'orange', '']))
     Filling the blanks: <b> red and orange </b>
 
 You can pass pre-processed templates as a list (blanks are ``None``, blocks are
 strings)::
 
     >>> t2 = Templater(template=[None, 'Music: ', None, ', Band: ', None])
-    >>> print t2.join(['', 'Welcome to the Jungle', 'Guns and Roses'])
+    >>> print(t2.join(['', 'Welcome to the Jungle', 'Guns and Roses']))
     Music: Welcome to the Jungle, Band: Guns and Roses
 
 ...or you can pass a string with markers, then ``Templater`` will create the
 list for you::
 
     >>> t3 = Templater(template='language=#,cool=#', marker='#')
-    >>> print t3.join(['', 'Python', 'YES', ''])
+    >>> print(t3.join(['', 'Python', 'YES', '']))
     language=Python,cool=YES
 
 Saving and opening templates is easy::
@@ -116,7 +116,7 @@ Saving and opening templates is easy::
     >>> template.save('my-first-template.html', marker='|||')
     >>> # and some time later...
     >>> loaded_template = Templater.open('my-first-template.html', marker='|||')
-    >>> print loaded_template.parse('<b> Romeo and Juliet </b>')
+    >>> print(loaded_template.parse('<b> Romeo and Juliet </b>'))
     ['', 'Romeo', 'Juliet', '']
 
 The difference between ``save`` and ``dump`` is that ``save`` stores the
@@ -142,7 +142,7 @@ create a new block in template::
     >>> t = Templater() # default min_block_size = 1
     >>> t.learn(str_1)
     >>> t.learn(str_2)
-    >>> print t._template
+    >>> print(t._template)
     [None, 'my favorite color is ', None, 'l', None, 'e', None]
 
 We don't want that ``'l'`` and ``'e'`` there, right? So::
@@ -150,7 +150,7 @@ We don't want that ``'l'`` and ``'e'`` there, right? So::
     >>> t = Templater(min_block_size=2)
     >>> t.learn(str_1)
     >>> t.learn(str_2)
-    >>> print t._template
+    >>> print(t._template)
     [None, 'my favorite color is ', None]
 
 
@@ -167,7 +167,7 @@ indices, let's see::
     >>> # The template knows the name of each marker just using the regexp provided
     >>> # Passing marker as regexp to specify named markers also work for Templater.open
 
-    >>> print template.parse('This <b> is </b> a test.')
+    >>> print(template.parse('This <b> is </b> a test.'))
     {'second-var': ' is ', 'third-var': ' a test.', 'first-var': 'This '}
 
     >>> # To save the template with named markers we need to provide a Python string.
@@ -204,9 +204,9 @@ pull request. Some technical notes for you:
 - This project uses `Test-Driven Development
   <http://en.wikipedia.org/wiki/Test-Driven_Development>`_.
 
-  - The tests are run using Python 2.7.2 on Ubuntu 11.10 amd64.
+  - The tests are run using Python 3.6 on macOS 10.14.4.
 - You can see the changes between versions in
-  `CHANGELOG.rst <https://github.com/turicas/templater/blob/master/CHANGELOG.rst>`_.
+  `CHANGELOG.rst <https://github.com/lee-W/templater/blob/master/CHANGELOG.rst>`_.
 - This project uses `semantic versioning <http://semver.org/>`_ (thanks,
   `Tom Preston-Werner <http://tom.preston-werner.com/>`_).
 
@@ -224,6 +224,8 @@ Many thanks to `Adrian Holovaty <http://www.holovaty.com/>`_ - he created
 `Escola de Matemática Aplicada (Fundação Getúlio Vargas) <http://emap.fgv.br>`_
 which gives me interesting problems to solve. :-)
 
+This software is modified by
+`Wei Lee <https://github.com/Lee-W>`_.
 
 License
 -------
