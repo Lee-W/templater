@@ -31,6 +31,9 @@ learn and does the hard work for you (for example: part of the learning
 algorithm is implemented in C for performance). Do you have 5 minutes? So learn
 with the `Examples`_.
 
+`templater3 <https://github.com/Lee-W/templater>`_ is the Python 3 version of
+`templater <https://github.com/turicas/templater>`_.
+
 
 Installation
 ------------
@@ -79,7 +82,7 @@ Examples
 
 All you need to know is below (and in the ``examples`` directory)::
 
-    >>> from templater import Templater
+    >>> from templater3 import Templater
     >>> documents_to_learn = ['<b> spam and eggs </b>', '<b> ham and spam </b>',
                               '<b> white and black </b>'] # list of documents
     >>> template = Templater()
