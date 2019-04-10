@@ -5,17 +5,17 @@ from distutils.core import setup, Extension
 
 
 setup(
-    name='templater',
-    version='0.4.0',
+    name='templater3',
+    version='0.5.0',
     description=(
         'Extract template (a pattern) from strings and parse other'
         'strings with this pattern.'
     ),
     long_description=open('README.rst').read(),
-    author=u'Álvaro Justen',
-    author_email='alvarojusten@gmail.com',
-    url='https://github.com/turicas/templater/',
-    py_modules=['templater'],
+    author=u'Álvaro Justen, Wei Lee',
+    author_email='alvarojusten@gmail.com, cl87654321@gmail.com',
+    url='https://github.com/Lee-W/templater',
+    py_modules=['templater3'],
     ext_modules=[
         Extension('_templater', ['templater.c'])
     ],
