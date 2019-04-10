@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 0.5.0
+-------------
+- Released at: 2019-04-10 16:32:18.
+- Migrate to Python3 and change package name to templater3
+
 Version 0.4.0
 -------------
 
